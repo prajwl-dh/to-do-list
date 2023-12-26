@@ -138,11 +138,19 @@ span {
     justify-content: center;
     align-items: center;
     color: #555;
-    font-size: 18px;
+    font-size: 30px;
     transition: all .2s ease;
 }
 
 span:hover{
     color: #ff5945;
     cursor: pointer;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 30,
+  'wght' 700,
+  'GRAD' 0,
+  'opsz' 0,
 }
