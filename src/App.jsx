@@ -43,7 +43,7 @@ export default function App() {
   const toDoArray = toDo.map((x) => (
     <li key={x.id} className={x.completed? "checked" : null} onClick={() => completeToDo(x.id)}>
       <p onClick={() => completeToDo(x.id)} className={x.completed? "checked" : null}>{x.value}</p>
-      <span onClick={() => deleteToDo(x.id)}>x</span>
+      <span onClick={() => deleteToDo(x.id)} className="material-symbols-outlined">Delete</span>
     </li>
   ));
 

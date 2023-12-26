@@ -86,7 +86,6 @@ ul li{
     padding: 12px 8px 12px 50px;
     margin-top: 5px;
     user-select: none;
-    cursor: pointer;
     position: relative;
 }
 ul li::before{
@@ -95,9 +94,18 @@ ul li::before{
     width: 24px;
     height: 24px;
     border-radius: 50%;
+    cursor: pointer;
     left: 0;
     border: 2px solid #ff5945;
 }
+
+ul p {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #edeef0;
+    margin-right: 30px;
+}
+
 ul .checked{
     color: #555;
     text-decoration: line-through;
@@ -109,10 +117,9 @@ span {
     position: absolute;
     right: 0;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-40%);
     width: 30px;
     height: 30px;
-    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -121,6 +128,6 @@ span {
     transition: all .2s ease;
 }
 span:hover{
-    background-color: #c9c9c9;
-    color: #fff;
+    color: #ff5945;
+    cursor: pointer;
 }
