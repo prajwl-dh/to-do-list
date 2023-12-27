@@ -1,7 +1,7 @@
 import React from "react";
 import './App.css';
 import { useDispatch, useSelector } from "react-redux";
-import { addToDo } from "./slices/todoSlice";
+import { addToDo, removeToDo, completeToDo } from "./slices/todoSlice";
 
 export default function App() {
   const [formData, setFormData] = React.useState({todo: ''});
@@ -17,9 +17,9 @@ export default function App() {
   }
 
   const toDoArray = toDo.map((todo) => (
-    <li key={todo.id} className={todo.completion? "checked" : null}>
+    <li key={todo.id} className={todo.completion? "checked" : null} onClick={() => dispatch(completeToDo(todo.id))}>
       <p className={todo.completed? "checked" : null}>{todo.todo}</p>
-      <span className="material-symbols-outlined">Delete</span>
+      <span className="material-symbols-outlined" onClick={() => dispatch(removeToDo(todo.id))}>Delete</span>
     </li>
   ))
 
