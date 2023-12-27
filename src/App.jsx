@@ -8,6 +8,8 @@ export default function App() {
   const toDo = useSelector((state) => state.todoReducer.value)
   const dispatch = useDispatch()
 
+  console.log(toDo)
+
   function updateFormData(event) {
     const { name, value } = event.target;
     setFormData((prev) => ({
@@ -27,7 +29,10 @@ export default function App() {
     <div className="container">
       <div className="todo-app">
         <div className="app-title">
-          <h2>To-do app using React and Redux</h2>
+          <h2>To-Do List App</h2>
+          <h4>
+            Features : Add tasks, remove tasks, mark as completed
+            </h4>
           <i className="fa-solid fa-book-bookmark"></i>
         </div>
         <div className="row">
