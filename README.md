@@ -1,4 +1,4 @@
-# React + Redux
+# ToDo-List by Prajwal
 
 A todo-list app using React and Redux.
 
