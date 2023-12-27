@@ -15,7 +15,7 @@ body{
     width: 100%;
     min-height: 100vh;
     background: linear-gradient(135deg, #153677, #4e085f);
-    padding: 10px;
+    padding: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,13 +24,14 @@ body{
 .todo-app{
     width: 100%;
     max-width: 540px;
+    height: 90vh;
     background-color: #fff;
-    padding: 15px 30px 70px;
+    padding: 15px 30px 10px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: left;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .app-title{
@@ -42,7 +43,7 @@ body{
 }
 
 .app-title h2, .app-title i{
-    font-size: 30px;
+    font-size: 35px;
     color: #002765;
     font-weight: 800;
 }
@@ -101,8 +102,11 @@ button:hover{
     }
 }
 
-ul{
+ul {
     list-style: none;
+    overflow-y: auto; /* Add this line */
+    max-height: auto; /* Set a fixed height as per your requirement */
+    padding-right: 15px; /* Add some padding to accommodate the scrollbar */
 }
 
 ul li{
