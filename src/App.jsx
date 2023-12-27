@@ -1,9 +1,11 @@
 import React from "react";
 import './App.css';
-import { v4 as uuidv4 } from 'uuid';
+import { useDispatch, useSelector } from "react-redux";
+import { addToDo } from "./slices/todoSlice";
 
 export default function App() {
   const [formData, setFormData] = React.useState({todo: ''});
+  const toDo = useSelector((state) => state.todoReducer.value)
 
   function updateFormData(event) {
     const { name, value } = event.target;
@@ -12,6 +14,8 @@ export default function App() {
       [name]: value
     }));
   }
+
+  const dispatch = useDispatch()
 
   return (
     <div className="container">
@@ -29,7 +33,10 @@ export default function App() {
             value={formData.todo}
             onChange={updateFormData}
           />
-          <button>Add</button>
+          <button onClick={() => {
+            dispatch(addToDo(formData.todo))
+            setFormData({todo: ''})
+            }}>Add</button>
         </div>
         <ul id="list-container">
           
