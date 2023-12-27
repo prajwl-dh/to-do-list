@@ -2,6 +2,8 @@
 
 A todo-list app using React and Redux.
 
+Link: https://capable-palmier-51dfde.netlify.app/
+
 Features:
   - Add tasks
   - Delete tasks
