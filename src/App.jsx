@@ -45,8 +45,12 @@ export default function App() {
             onChange={updateFormData}
           />
           <button onClick={() => {
-            dispatch(addToDo(formData.todo))
-            setFormData({todo: ''})
+            if(formData.todo.trim() !== ''){
+              dispatch(addToDo(formData.todo))
+              setFormData({todo: ''})
+            }else{
+              return
+            }
             }}>Add</button>
         </div>
         <ul id="list-container">
