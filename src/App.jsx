@@ -6,6 +6,7 @@ import { addToDo } from "./slices/todoSlice";
 export default function App() {
   const [formData, setFormData] = React.useState({todo: ''});
   const toDo = useSelector((state) => state.todoReducer.value)
+  const dispatch = useDispatch()
 
   function updateFormData(event) {
     const { name, value } = event.target;
@@ -15,7 +16,12 @@ export default function App() {
     }));
   }
 
-  const dispatch = useDispatch()
+  const toDoArray = toDo.map((todo) => (
+    <li key={todo.id} className={todo.completion? "checked" : null}>
+      <p className={todo.completed? "checked" : null}>{todo.todo}</p>
+      <span className="material-symbols-outlined">Delete</span>
+    </li>
+  ))
 
   return (
     <div className="container">
@@ -39,7 +45,7 @@ export default function App() {
             }}>Add</button>
         </div>
         <ul id="list-container">
-          
+          {toDoArray}
         </ul>
       </div>
     </div>
